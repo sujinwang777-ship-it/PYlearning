@@ -1,0 +1,20 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译并运行 C 程序",
+            "type": "shell",
+            "command": "call \"C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\VsDevCmd.bat\" -arch=x86 && cl /nologo /TC \"${file}\" /Fe:\"${fileDirname}\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\cmd.exe",
+                    "args": ["/d", "/c"]
+                }
+            },
+            "problemMatcher": "$msCompile",
+            "group": "build"
+        }
+    ]
+}
